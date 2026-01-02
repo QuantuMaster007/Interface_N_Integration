@@ -1,0 +1,76 @@
+name: "Sev-1: Interlock miswire / fail-safe issue"
+description: "Safety or interlock issue blocking power-on or commissioning."
+title: "[Sev-1][Safety] Interlock miswire: Door open not latched → fail-safe incorrect"
+labels: ["Sev-1", "Safety", "Blocker", "Controls", "Hardware"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this for safety/interlock failures that block commissioning or violate fail-safe behavior.
+
+  - type: input
+    id: environment
+    attributes:
+      label: Environment / Build
+      description: "HW rev, PLC/FW/HMI versions, site, date/time"
+      placeholder: "HW Rev A | PLC v0.9 | HMI v0.9 | Site: Lab | 2026-01-02"
+    validations:
+      required: true
+
+  - type: textarea
+    id: symptom
+    attributes:
+      label: Symptom / What happened
+      description: "What did you observe? Include alarms/logs."
+      placeholder: "Door opened during cycle; interlock did not latch; system continued motion..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior (fail-safe)
+      placeholder: "Immediate motion stop, energy isolation, safe state asserted, alarm raised..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      placeholder: "1) Start cycle... 2) Open door... 3) Observe..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: suspected
+    attributes:
+      label: Suspected root cause
+      placeholder: "Miswired input, inverted logic, incorrect IO map, wrong safety relay wiring..."
+    validations:
+      required: false
+
+  - type: textarea
+    id: interface_impact
+    attributes:
+      label: Interface impact
+      description: "Which signal(s) / ICD / IO map lines are impacted?"
+      placeholder: "Signal: DOOR_OPEN, SAFETY_CHAIN_OK; IO map row X; ICD section Y"
+    validations:
+      required: true
+
+  - type: textarea
+    id: containment
+    attributes:
+      label: Containment / immediate mitigation
+      placeholder: "Lockout/tagout, disable motion, require two-person check, jumper removed..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: verification
+    attributes:
+      label: Verification plan (evidence)
+      placeholder: "Update IO map, rewire, rerun TC-010_INTERLOCK_DOOR_OPEN, attach logs/screenshots..."
+    validations:
+      required: true
