@@ -1,4 +1,4 @@
-# Interface & Integration Repo — ICD + Test + Bring-up
+# Interface & Integration — ICD + Test + Bring-up
 
 A **systems-integration execution repo** that demonstrates how to manage interfaces and bring-up across:
 - Hardware (sensors/actuators, wiring, tolerances, power)
