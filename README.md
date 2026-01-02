@@ -105,11 +105,6 @@ src/
 │  └─ validate_io_map.py
 └─ tooling/
    └─ rtm_summary.py
-
-.github/
-├─ ISSUE_TEMPLATE/
-│  └─ bug.yml
-└─ pull_request_template.md
 ```
 
 ---
