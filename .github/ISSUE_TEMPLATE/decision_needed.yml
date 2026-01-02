@@ -1,0 +1,47 @@
+name: "Decision Needed"
+description: "A decision required to unblock integration (protocols, version lock, acceptance criteria)."
+title: "[Decision Needed] Choose protocol version: Modbus/TCP vs EtherNet/IP for Subsystem X"
+labels: ["Decision Needed", "Blocker", "Controls"]
+body:
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      placeholder: "Subsystem X needs comms to PLC; current assumptions conflict across teams..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: options
+    attributes:
+      label: Options considered
+      placeholder: |
+        A) Modbus/TCP
+        B) EtherNet/IP
+        C) Hybrid (gateway)
+    validations:
+      required: true
+
+  - type: textarea
+    id: constraints
+    attributes:
+      label: Constraints (technical + facilities)
+      placeholder: "Network security/VLAN rules, latency, vendor support, diagnostics, maintainability..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: recommendation
+    attributes:
+      label: Recommendation + why
+      placeholder: "Recommend option B due to vendor support + diagnostics; mitigations for VLAN..."
+    validations:
+      required: true
+
+  - type: input
+    id: decision_deadline
+    attributes:
+      label: Decision deadline
+      placeholder: "2026-01-10"
+    validations:
+      required: true
