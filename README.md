@@ -58,30 +58,41 @@ python src/tooling/rtm_summary.py docs/requirements/RTM.csv
 
 ---
 
-## Repo map
+
+**Important:**  
+- The tree must be between the triple backticks.  
+- Use `text` after the first backticks (helps formatting).  
+- Don’t indent the backticks.
+
+---
+
+### Copy/paste this working vertical tree (already formatted)
+Paste this **inside** the ` ```text ` block:
+
+```text
 docs/
-├─ interfaces/                 # Interface control + comms
+├─ interfaces/
 │  ├─ ICD_OVERVIEW.md
 │  ├─ SIGNAL_SPEC_TEMPLATE.md
 │  └─ PROTOCOLS.md
-├─ requirements/               # Requirements → Test → Evidence
+├─ requirements/
 │  ├─ REQUIREMENTS.md
 │  └─ RTM.csv
-├─ bringup/                    # Commissioning + SAT readiness
+├─ bringup/
 │  ├─ BRINGUP_PLAN.md
 │  └─ COMMISSIONING_CHECKLIST.md
-├─ test/                       # Verification execution
+├─ test/
 │  ├─ TEST_PLAN.md
 │  └─ test_cases/
 │     ├─ TC-001_BASIC_CYCLE.md
 │     └─ TC-010_INTERLOCK_DOOR_OPEN.md
-├─ triage/                     # Failure discipline
+├─ triage/
 │  ├─ SEVERITY_RUBRIC.md
 │  └─ FAILURE_TRIAGE_WORKFLOW.md
-├─ releases/                   # Anti-churn controls
+├─ releases/
 │  ├─ RELEASE_LOCK.md
 │  └─ VERSION_MATRIX.md
-└─ evidence/                   # Proof outputs
+└─ evidence/
    ├─ io_map_validation_output.md
    └─ rtm_summary_output.md
 
@@ -99,8 +110,7 @@ src/
 ├─ ISSUE_TEMPLATE/
 │  └─ bug.yml
 └─ pull_request_template.md
-
-
+```
 ---
 
 ## License
@@ -115,4 +125,4 @@ python src/tooling/rtm_summary.py docs/requirements/RTM.csv > docs/evidence/rtm_
 git add README.md docs/evidence/*.md
 git commit -m "Update README with story + add evidence outputs"
 git push
-
+```
