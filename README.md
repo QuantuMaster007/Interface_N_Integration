@@ -11,6 +11,22 @@ A **systems-integration execution repo** that shows how I translate HW + Control
 
 ---
 
+## System view (one-screen)
+```mermaid
+flowchart LR
+  HW[Hardware Subsystems] <--> IO[IO Map / Signals]
+  IO <--> CTRL[Controls (PLC/FW/HMI)]
+  CTRL <--> NET[Facilities Network / VLAN]
+  HW <--> UTIL[Facilities Utilities (Power/CDA/Exhaust/etc.)]
+  CTRL <--> TEST[Test Plan + Test Cases]
+  TEST <--> RTM[RTM (Req → Test → Evidence)]
+  RTM --> EV[Evidence Pack]
+  EV --> RL[Release Lock / Version Matrix]
+  RL --> SAT[SAT / Commissioning Exit]
+```
+
+---
+
 ## Most important artifacts (start here)
 
 ### 1) Interface control
@@ -26,15 +42,18 @@ A **systems-integration execution repo** that shows how I translate HW + Control
 - Bring-up plan: [`docs/bringup/BRINGUP_PLAN.md`](docs/bringup/BRINGUP_PLAN.md)  
 - Commissioning checklist: [`docs/bringup/COMMISSIONING_CHECKLIST.md`](docs/bringup/COMMISSIONING_CHECKLIST.md)
 
-### 4) Test execution
+### 4) Facilities readiness (site constraints)
+- Facilities requirements: [`docs/facilities/FACILITIES_REQUIREMENTS.md`](docs/facilities/FACILITIES_REQUIREMENTS.md)
+
+### 5) Test execution
 - Test plan: [`docs/test/TEST_PLAN.md`](docs/test/TEST_PLAN.md)  
 - Test cases: [`docs/test/test_cases/`](docs/test/test_cases/)
 
-### 5) Triage discipline
+### 6) Triage discipline
 - Severity rubric: [`docs/triage/SEVERITY_RUBRIC.md`](docs/triage/SEVERITY_RUBRIC.md)  
 - Failure triage workflow: [`docs/triage/FAILURE_TRIAGE_WORKFLOW.md`](docs/triage/FAILURE_TRIAGE_WORKFLOW.md)
 
-### 6) Release lock (anti-churn controls)
+### 7) Release lock (anti-churn controls)
 - Release lock rules: [`docs/releases/RELEASE_LOCK.md`](docs/releases/RELEASE_LOCK.md)  
 - Version matrix: [`docs/releases/VERSION_MATRIX.md`](docs/releases/VERSION_MATRIX.md)
 
@@ -81,6 +100,8 @@ docs/
 ├─ bringup/
 │  ├─ BRINGUP_PLAN.md
 │  └─ COMMISSIONING_CHECKLIST.md
+├─ facilities/
+│  └─ FACILITIES_REQUIREMENTS.md
 ├─ test/
 │  ├─ TEST_PLAN.md
 │  └─ test_cases/
@@ -105,7 +126,19 @@ src/
 │  └─ validate_io_map.py
 └─ tooling/
    └─ rtm_summary.py
+
+.github/
+├─ ISSUE_TEMPLATE/
+│  ├─ sev1_interlock_miswire.yml
+│  ├─ change_request.yml
+│  └─ decision_needed.yml
+└─ pull_request_template.md
 ```
+
+---
+
+## Suggested GitHub labels
+`Hardware` `Controls` `Facilities` `Safety` `Test` `Blocker` `Sev-1` `Sev-2` `Sev-3` `Change Request` `Decision Needed`
 
 ---
 
