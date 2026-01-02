@@ -27,7 +27,6 @@ flowchart LR
   CTRL --> HW
   NET --> CTRL
   UTIL --> HW
-
 ```
 
 ---
