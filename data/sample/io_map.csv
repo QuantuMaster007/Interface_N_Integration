@@ -1,0 +1,6 @@
+signal_id,signal_name,direction,domain,type,units,voltage_or_range,update_rate_ms,failsafe_behavior,alarm_id,notes
+S001,E_STOP_CHAIN_OK,Input,Safety,Digital,,24V,10,If false -> safe stop,ALM-001,Series safety chain
+S010,DOOR_CLOSED,Input,Safety,Digital,,24V,10,If false -> safe stop,ALM-010,Door interlock
+S100,MOTOR_ENABLE,Output,Controls,Digital,,24V,10,Default false,,Enable motor drive
+S200,CHAMBER_PRESSURE,Input,Hardware,Analog,Torr,0-10V,100,Clamp recipe if out of range,ALM-200,Pressure transducer
+S300,FACILITY_CDA_OK,Input,Facilities,Digital,,24V,100,Prevent start,ALM-300,Utility ok

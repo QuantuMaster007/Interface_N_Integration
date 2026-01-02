@@ -1,0 +1,4 @@
+requirement_id,requirement_text,priority,verification_method,test_case_id,evidence_link,status
+SR-001,System shall complete basic cycle <X sec>,Must,Test,TC-001,,Not Started
+SAF-001,Door open shall trigger safe stop,Must,Test,TC-010,,Not Started
+FAC-001,System shall operate on <208VAC 3P> within <xA>,Must,Inspection,TC-020,,Not Started
