@@ -141,10 +141,5 @@ src/
 
 ---
 
-## Suggested GitHub labels
-`Hardware` `Controls` `Facilities` `Safety` `Test` `Blocker` `Sev-1` `Sev-2` `Sev-3` `Change Request` `Decision Needed`
-
----
-
 ## License
 MIT
