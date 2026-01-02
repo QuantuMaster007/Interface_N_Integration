@@ -114,15 +114,8 @@ src/
 ---
 
 ## License
-
-### Next (so the README links don’t 404)
-Run these in Repo B and commit/push:
-```bash
-mkdir -p docs/evidence
-python src/validators/validate_io_map.py data/sample/io_map.csv > docs/evidence/io_map_validation_output.md
-python src/tooling/rtm_summary.py docs/requirements/RTM.csv > docs/evidence/rtm_summary_output.md
-
-git add README.md docs/evidence/*.md
-git commit -m "Update README with story + add evidence outputs"
-git push
+```text
+MIT License
+Copyright (c) 2026
+```
 ```
