@@ -1,50 +1,64 @@
 # Interface & Integration — ICD + Test + Bring-up
 
-A **systems-integration execution repo** that demonstrates how to manage interfaces and bring-up across:
-- Hardware (sensors/actuators, wiring, tolerances, power)
-- Controls/Software (PLC/firmware/HMI, safety interlocks, alarms)
-- Facilities (utilities signals, network, safety systems)
+A **systems-integration execution repo** that shows how I translate messy HW + Controls + Facilities constraints into a **repeatable bring-up + verification plan** — with pinned versions, interface control, and evidence-based test closure.
 
-This repo is built to look like a real integration effort:
-- **ICD + IO map**
-- **Requirements traceability matrix (RTM)**
-- **Test plan + test cases**
-- **Bring-up / commissioning checklist**
-- **Failure triage + issue severity rubric**
-- **Versioning + release lock discipline**
+**What this demonstrates (in 60 seconds):**
+- ✅ How I baseline and control interfaces using an **ICD + IO map**
+- ✅ How I prevent churn during integration with a **Release Lock / Version Matrix**
+- ✅ How I run bring-up with a **commissioning checklist + entry/exit gates**
+- ✅ How I close requirements using an **RTM (requirement → test → evidence)**
+- ✅ How I triage failures using a **severity rubric + workflow**
 
 ---
 
-## Start here
-1) ICD overview: [`docs/interfaces/ICD_OVERVIEW.md`](docs/interfaces/ICD_OVERVIEW.md)  
-2) IO map (machine-readable): [`data/sample/io_map.csv`](data/sample/io_map.csv)  
-3) Requirements + RTM: [`docs/requirements/REQUIREMENTS.md`](docs/requirements/REQUIREMENTS.md) + [`docs/requirements/RTM.csv`](docs/requirements/RTM.csv)  
-4) Bring-up plan: [`docs/bringup/BRINGUP_PLAN.md`](docs/bringup/BRINGUP_PLAN.md)  
-5) Test execution: [`docs/test/TEST_PLAN.md`](docs/test/TEST_PLAN.md) + [`docs/test/test_cases/`](docs/test/test_cases/)  
-6) Validate ICD/IO consistency: `python src/validators/validate_io_map.py data/sample/io_map.csv`
+## Most important artifacts (start here)
+**1) Interface control**
+- ICD overview: [`docs/interfaces/ICD_OVERVIEW.md`](docs/interfaces/ICD_OVERVIEW.md)
+- IO map (machine-readable): [`data/sample/io_map.csv`](data/sample/io_map.csv)
+- Protocols/comms notes: [`docs/interfaces/PROTOCOLS.md`](docs/interfaces/PROTOCOLS.md)
+
+**2) Requirements → Verification (traceability)**
+- Requirements: [`docs/requirements/REQUIREMENTS.md`](docs/requirements/REQUIREMENTS.md)
+- RTM (source of truth): [`docs/requirements/RTM.csv`](docs/requirements/RTM.csv)
+
+**3) Bring-up & Commissioning**
+- Bring-up plan: [`docs/bringup/BRINGUP_PLAN.md`](docs/bringup/BRINGUP_PLAN.md)
+- Commissioning checklist: [`docs/bringup/COMMISSIONING_CHECKLIST.md`](docs/bringup/COMMISSIONING_CHECKLIST.md)
+
+**4) Test execution + evidence**
+- Test plan: [`docs/test/TEST_PLAN.md`](docs/test/TEST_PLAN.md)
+- Test cases: [`docs/test/test_cases/`](docs/test/test_cases/)
+
+**5) Triage discipline**
+- Severity rubric: [`docs/triage/SEVERITY_RUBRIC.md`](docs/triage/SEVERITY_RUBRIC.md)
+- Failure triage workflow: [`docs/triage/FAILURE_TRIAGE_WORKFLOW.md`](docs/triage/FAILURE_TRIAGE_WORKFLOW.md)
+
+**6) Release lock (anti-churn controls)**
+- Release lock rules: [`docs/releases/RELEASE_LOCK.md`](docs/releases/RELEASE_LOCK.md)
+- Version matrix: [`docs/releases/VERSION_MATRIX.md`](docs/releases/VERSION_MATRIX.md)
 
 ---
 
-Update Repo B README.md with a short section like:
+## Evidence outputs (proof this repo runs)
+After running the commands below, this repo produces “evidence” files:
+- IO map validation output: `docs/evidence/io_map_validation_output.md`
+- RTM status summary: `docs/evidence/rtm_summary_output.md`
 
-What this repo demonstrates (integration discipline)
+---
 
-Links to:
-
-data/sample/io_map.csv
-
-docs/requirements/RTM.csv
-
-docs/bringup/BRINGUP_PLAN.md
-
-docs/evidence/io_map_validation_output.md
-
-docs/evidence/rtm_summary_output.md
+## Quick start (run + generate evidence)
+Validate interface consistency (IO map):
+```bash
+python src/validators/validate_io_map.py data/sample/io_map.csv
+```
+Summarize requirements closure (RTM):
+```bash
+python src/tooling/rtm_summary.py docs/requirements/RTM.csv
+```
 
 ---
 
 ## Repo map
-```
 docs/
   interfaces/
   requirements/
@@ -52,21 +66,27 @@ docs/
   bringup/
   triage/
   releases/
+  evidence/
 data/
   sample/
 src/
   validators/
   tooling/
 .github/
-```
-
----
-
-## Minimal “release lock” pattern
-- Proposed: `docs/releases/RELEASE_LOCK.md`
-- Track versions: `docs/releases/VERSION_MATRIX.md`
 
 ---
 
 ## License
-MIT (recommended for templates).
+
+### Next (so the README links don’t 404)
+Run these in Repo B and commit/push:
+```bash
+mkdir -p docs/evidence
+python src/validators/validate_io_map.py data/sample/io_map.csv > docs/evidence/io_map_validation_output.md
+python src/tooling/rtm_summary.py docs/requirements/RTM.csv > docs/evidence/rtm_summary_output.md
+
+git add README.md docs/evidence/*.md
+git commit -m "Update README with story + add evidence outputs"
+git push
+
+---
