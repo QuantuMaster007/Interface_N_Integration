@@ -25,6 +25,24 @@ This repo is built to look like a real integration effort:
 
 ---
 
+Update Repo B README.md with a short section like:
+
+What this repo demonstrates (integration discipline)
+
+Links to:
+
+data/sample/io_map.csv
+
+docs/requirements/RTM.csv
+
+docs/bringup/BRINGUP_PLAN.md
+
+docs/evidence/io_map_validation_output.md
+
+docs/evidence/rtm_summary_output.md
+
+---
+
 ## Repo map
 ```
 docs/
