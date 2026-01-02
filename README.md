@@ -14,15 +14,20 @@ A **systems-integration execution repo** that shows how I translate HW + Control
 ## System view (one-screen)
 ```mermaid
 flowchart LR
-  HW[Hardware Subsystems] <--> IO[IO Map / Signals]
-  IO <--> CTRL[Controls (PLC/FW/HMI)]
-  CTRL <--> NET[Facilities Network / VLAN]
-  HW <--> UTIL[Facilities Utilities (Power/CDA/Exhaust/etc.)]
-  CTRL <--> TEST[Test Plan + Test Cases]
-  TEST <--> RTM[RTM (Req → Test → Evidence)]
+  HW[Hardware Subsystems] --> IO[IO Map and Signals]
+  IO --> CTRL[Controls: PLC, Firmware, HMI]
+  CTRL --> NET[Facilities Network and VLAN]
+  HW --> UTIL[Facilities Utilities: Power, CDA, Exhaust]
+  CTRL --> TEST[Test Plan and Test Cases]
+  TEST --> RTM[RTM: Requirements to Tests to Evidence]
   RTM --> EV[Evidence Pack]
-  EV --> RL[Release Lock / Version Matrix]
-  RL --> SAT[SAT / Commissioning Exit]
+  EV --> RL[Release Lock and Version Matrix]
+  RL --> SAT[SAT and Commissioning Exit]
+
+  CTRL --> HW
+  NET --> CTRL
+  UTIL --> HW
+
 ```
 
 ---
