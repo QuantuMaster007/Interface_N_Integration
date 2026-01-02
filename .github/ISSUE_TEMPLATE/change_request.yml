@@ -1,0 +1,66 @@
+name: "Change Request: ICD / IO / RTM update"
+description: "Propose a controlled change to interfaces, requirements, tests, or bring-up."
+title: "[CR] Add new MFC feedback signal + update ICD/RTM/test"
+labels: ["Change Request", "Controls", "Hardware", "Facilities", "Decision Needed"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use change requests to control interface churn. Include impact + verification.
+
+  - type: input
+    id: change_summary
+    attributes:
+      label: Change summary
+      placeholder: "Add MFC_FLOW_FB signal and map it through PLC/HMI; update RTM + test case."
+    validations:
+      required: true
+
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Rationale / why now
+      placeholder: "Needed for closed-loop control, quality monitoring, SAT acceptance criteria..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: impacted_artifacts
+    attributes:
+      label: Impacted artifacts (check all that apply)
+      placeholder: |
+        - data/sample/io_map.csv
+        - docs/interfaces/ICD_OVERVIEW.md
+        - docs/requirements/RTM.csv
+        - docs/test/test_cases/...
+        - docs/releases/VERSION_MATRIX.md
+    validations:
+      required: true
+
+  - type: textarea
+    id: schedule_cost_risk
+    attributes:
+      label: Schedule / cost / risk impact
+      placeholder: "Schedule: +1 day retest; Cost: none; Risk: reduced integration defects..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: verification_plan
+    attributes:
+      label: Verification plan (evidence required)
+      placeholder: "Update IO map → run validator; update RTM; add/execute test case; attach logs"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: approval
+    attributes:
+      label: Approval status
+      options:
+        - Proposed
+        - Approved
+        - Rejected
+        - Deferred
+    validations:
+      required: true
