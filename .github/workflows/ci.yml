@@ -1,0 +1,42 @@
+name: integration-ci
+
+on:
+  pull_request:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run IO map validation (must pass)
+        run: |
+          python --version
+          python src/validators/validate_io_map.py data/sample/io_map.csv
+
+      - name: Run RTM summary (must pass)
+        run: |
+          python src/tooling/rtm_summary.py docs/requirements/RTM.csv
+
+      - name: Generate evidence outputs (artifact)
+        run: |
+          mkdir -p docs/evidence
+          python src/validators/validate_io_map.py data/sample/io_map.csv > docs/evidence/io_map_validation_output.md
+          python src/tooling/rtm_summary.py docs/requirements/RTM.csv > docs/evidence/rtm_summary_output.md
+
+      - name: Upload evidence outputs
+        uses: actions/upload-artifact@v4
+        with:
+          name: evidence_outputs
+          path: docs/evidence/*.md
