@@ -60,19 +60,46 @@ python src/tooling/rtm_summary.py docs/requirements/RTM.csv
 
 ## Repo map
 docs/
-  interfaces/
-  requirements/
-  test/
-  bringup/
-  triage/
-  releases/
-  evidence/
+├─ interfaces/                 # Interface control + comms
+│  ├─ ICD_OVERVIEW.md
+│  ├─ SIGNAL_SPEC_TEMPLATE.md
+│  └─ PROTOCOLS.md
+├─ requirements/               # Requirements → Test → Evidence
+│  ├─ REQUIREMENTS.md
+│  └─ RTM.csv
+├─ bringup/                    # Commissioning + SAT readiness
+│  ├─ BRINGUP_PLAN.md
+│  └─ COMMISSIONING_CHECKLIST.md
+├─ test/                       # Verification execution
+│  ├─ TEST_PLAN.md
+│  └─ test_cases/
+│     ├─ TC-001_BASIC_CYCLE.md
+│     └─ TC-010_INTERLOCK_DOOR_OPEN.md
+├─ triage/                     # Failure discipline
+│  ├─ SEVERITY_RUBRIC.md
+│  └─ FAILURE_TRIAGE_WORKFLOW.md
+├─ releases/                   # Anti-churn controls
+│  ├─ RELEASE_LOCK.md
+│  └─ VERSION_MATRIX.md
+└─ evidence/                   # Proof outputs
+   ├─ io_map_validation_output.md
+   └─ rtm_summary_output.md
+
 data/
-  sample/
+└─ sample/
+   └─ io_map.csv
+
 src/
-  validators/
-  tooling/
+├─ validators/
+│  └─ validate_io_map.py
+└─ tooling/
+   └─ rtm_summary.py
+
 .github/
+├─ ISSUE_TEMPLATE/
+│  └─ bug.yml
+└─ pull_request_template.md
+
 
 ---
 
