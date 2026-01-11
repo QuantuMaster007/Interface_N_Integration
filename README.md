@@ -31,7 +31,7 @@ flowchart LR
 
 ---
 
-## Most important artifacts (start here)
+## Most important artifacts 
 
 ### 1) Interface control
 - ICD overview: [`docs/interfaces/ICD_OVERVIEW.md`](docs/interfaces/ICD_OVERVIEW.md)  
@@ -63,14 +63,14 @@ flowchart LR
 
 ---
 
-## Evidence outputs (proof this repo runs)
+## Evidence outputs 
 After running the commands below, this repo produces evidence files:
 - IO map validation output: [`docs/evidence/io_map_validation_output.md`](docs/evidence/io_map_validation_output.md)
 - RTM status summary: [`docs/evidence/rtm_summary_output.md`](docs/evidence/rtm_summary_output.md)
 
 ---
 
-## Quick start (run + generate evidence)
+## Quick start 
 
 Validate interface consistency (IO map):
 ```bash
