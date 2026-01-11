@@ -1,6 +1,6 @@
 # Interface & Integration — ICD + Test + Bring-up
 
-A **systems-integration execution repo** that shows how I translate HW + Controls + Facilities constraints into a **repeatable bring-up + verification plan** — with pinned versions, interface control, and evidence-based test closure.
+A **systems-integration execution project ** that shows how I translate HW + Controls + Facilities constraints into a **repeatable bring-up + verification plan** — with pinned versions, interface control, and evidence-based test closure.
 
 **What this demonstrates (in ~60 seconds):**
 - ✅ Baseline + control interfaces using an **ICD + IO map**
