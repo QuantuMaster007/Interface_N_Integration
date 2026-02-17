@@ -141,5 +141,34 @@ src/
 
 ---
 
-## License
-MIT
+---
+
+## 🤝 Contributing
+
+This is a demonstration project for portfolio. If you'd like to extend it:
+
+1. Fork the repository
+2. Create a feature branch
+3. Add enhancements (new models, visualizations, data sources)
+4. Submit a pull request
+
+---
+
+## 📧 Contact
+
+Let's connect! Whether you have a question or just want to say hi, feel free to reach out.
+
+| Platform | Link |
+| :--- | :--- |
+| **👤 Name** | Sourabh Tarodekar |
+| **✉️ Email** | [sourabh232@gmail.com](mailto:sourabh232@gmail.com) |
+| **💼 LinkedIn** | [linkedin.com/in/sourabh232](https://www.linkedin.com/in/sourabh232) |
+| **🚀 Portfolio** | [QuantuMaster007 Portfolio](https://github.com/QuantuMaster007/sourabh232.git) |
+
+---
+
+## 📄 License
+
+MIT License - See LICENSE file for details
+
+---
